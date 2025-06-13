@@ -1,0 +1,6 @@
+Flask==2.0.3
+Pillow==10.0.0
+numpy>=1.23
+Werkzeug<2.1.0
+gunicorn
+setuptools>=68.0.0

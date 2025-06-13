@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esteganografia com Imagens Digitais</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Esteganografia com Imagens Digitais</h1>
+        
+        <section id="encode-section">
+            <h2>🔐 Inserir mensagem em imagem</h2>
+            <input type="file" id="image-upload" accept="image/png">
+            <input type="text" id="secret-message" placeholder="Digite sua mensagem secreta">
+            <button id="encode-button">Codificar e gerar imagem</button>
+            <a id="download-link" style="display:none;">Baixar imagem com mensagem</a>
+        </section>
+
+        <section id="decode-section">
+            <h2>🔎 Ler mensagem de imagem</h2>
+            <input type="file" id="image-upload-decode" accept="image/png">
+            <button id="decode-button">Extrair mensagem oculta</button>
+            <p id="extracted-message"></p>
+        </section>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
