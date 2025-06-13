@@ -1,34 +1,40 @@
 # Projeto Contador de Objetos
 
-Este projeto implementa um algoritmo aprimorado de detecção e contagem de objetos usando Python e OpenCV. O foco principal é identificar e contar objetos em imagens com precisão, reduzindo falsos positivos. O projeto utiliza técnicas avançadas de segmentação, incluindo o algoritmo watershed, para aprimorar o processo de detecção.
+Este projeto implementa um algoritmo de detecção e contagem de objetos usando Python e OpenCV. O objetivo é identificar e contar objetos em imagens com precisão, utilizando técnicas de segmentação, operações morfológicas e o algoritmo watershed.
 
-## Melhorias Realizadas
+## Funcionalidades
 
-1. **Técnicas Avançadas de Segmentação**: Implementação do algoritmo watershed para separar melhor objetos sobrepostos, melhorando a precisão da detecção.
-2. **Pré-processamento Aprimorado**: Ajuste de parâmetros para binarização e operações morfológicas para criar uma máscara mais limpa, reduzindo ruídos e melhorando a detecção de objetos.
-3. **Filtragem de Contornos**: Adição de filtros para ignorar pequenos contornos que provavelmente são ruídos, garantindo que apenas objetos significativos sejam contados.
-4. **Saída Visual**: A imagem final de saída exibe os contornos detectados e a contagem total de objetos diretamente na imagem, proporcionando feedback visual imediato.
-5. **Salvamento da Imagem**: A imagem processada com contornos e contagem é salva em disco para análise ou relatório posterior.
+- **Segmentação Avançada:** Utiliza o algoritmo watershed para separar objetos sobrepostos.
+- **Pré-processamento:** Conversão para tons de cinza, binarização (Otsu invertida) e operações morfológicas para remoção de ruídos.
+- **Contagem de Objetos:** Conta objetos significativos na imagem, ignorando pequenos ruídos.
+- **Saída Visual:** Exibe e salva a imagem final com os contornos dos objetos detectados e a contagem total sobreposta.
+- **Salvamento de Resultado:** A imagem processada é salva no diretório `images` como `mask.png`.
 
 ## Estrutura do Projeto
 
 ```
-object-counter
+contagem_objetos
 ├── src
 │   ├── main.py        # Script principal para detecção e contagem de objetos
 │   └── utils.py       # Funções utilitárias para processamento de imagens
 ├── images
 │   ├── chocolates.jpg  # Imagem de entrada para detecção
-│   ├── seeds.png       # Segunda imagem de entrada para testes
-│   └── mask.png        # Máscara gerada durante o processamento
+│   ├── seeds.png       # Outra imagem de entrada para testes
+│   ├── mask.png        # Imagem de saída gerada pelo processamento
+│   ├── moedas.jpg      # Outras imagens de exemplo
+│   ├── moedas.png
+│   ├── gems.jpg
 ├── requirements.txt    # Lista de dependências
+├── dependencias.txt    # Instruções para instalação das dependências
 ├── README.md           # Documentação do projeto
-└── .gitignore          # Arquivos a serem ignorados pelo Git
 ```
 
 ## Requisitos
 
-Para executar este projeto, é necessário ter Python 3.x instalado juntamente com as bibliotecas requeridas. Você pode instalar as dependências usando o seguinte comando:
+- Python 3.12
+- As bibliotecas listadas em `requirements.txt`
+
+Para instalar as dependências, execute:
 
 ```bash
 pip install -r requirements.txt
@@ -36,10 +42,16 @@ pip install -r requirements.txt
 
 ## Executando o Código
 
-Para executar o algoritmo de detecção e contagem de objetos, rode o script principal:
+Para rodar o algoritmo de detecção e contagem de objetos, execute o script principal:
 
 ```bash
 python src/main.py
 ```
 
-Isso irá processar as imagens localizadas no diretório `images` e exibir os resultados. A imagem de saída com os contornos detectados e a contagem será salva no diretório `images` como `mask.png`.
+O script irá processar a imagem `images/chocolates.jpg` (ou outra imagem definida no código), exibir os resultados em janelas e salvar a imagem final com os contornos e a contagem em `images/mask.png`.
+
+## Observações
+
+- Para testar com outras imagens, substitua o caminho da imagem em `src/main.py`.
+- O resultado será exibido em janelas do OpenCV e salvo automaticamente.
+- O código pode ser adaptado para diferentes tipos de imagens ajustando os parâmetros de segmentação e morfologia.
