@@ -43,11 +43,3 @@ python src/main.py
 ```
 
 Isso irá processar as imagens localizadas no diretório `images` e exibir os resultados. A imagem de saída com os contornos detectados e a contagem será salva no diretório `images` como `mask.png`.
-
-## Informações Adicionais
-
-Sinta-se à vontade para explorar o arquivo `src/utils.py` para funções utilitárias que dão suporte ao algoritmo principal. O projeto pode ser estendido com recursos adicionais, como suporte a diferentes formatos de imagem ou integração com uma interface de usuário.
-
-## Licença
-
-Este projeto é open-source e está disponível para modificação e distribuição sob a Licença MIT.
